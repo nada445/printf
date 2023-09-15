@@ -1,13 +1,89 @@
 #include "main.h"
+
+/**
+ * print_char - does something
+ * @ptr: variable
+ * @charcountp: variable
+ * Return: void
+ */
+void print_char(va_list ptr, int *charcountp)
+{
+putchar(va_arg(ptr, int));
+(*charcountp) += 1;
+}
+/**
+ * print_str - does something
+ * @ptr: variable
+ * @charcountp: variable
+ * Return: void
+ */
+void print_str(va_list ptr, int *charcountp)
+{
+char *str = va_arg(ptr, char *);
+while (*str)
+{
+putchar(*str);
+(*charcountp) += 1;
+str++;
+}
+}
+/**
+ * print_int - does something
+ * @ptr: variable
+ * @charcountp: variable
+ * Return: void
+ */
+void print_int(va_list ptr, int *charcountp)
+{
+int num = va_arg(ptr, int);
+int num_copy = num;
+int num_digits = 0;
+
+do {
+num_copy /= 10;
+num_digits++;
+} while (num_copy != 0);
+
+if (num < 0)
+{
+putchar('-');
+*(charcountp) += 1;
+num = -num;
+}
+
+int divisor = 1;
+for (int i = 1; i < num_digits; i++)
+{
+divisor *= 10;
+}
+
+while (divisor > 0)
+{
+int digit = num / divisor;
+putchar('0' + digit);
+*(charcountp) += 1;
+num %= divisor;
+divisor /= 10;
+}
+
+}
+
 /**
  * _printf - printf function
  * @format: var
  * Return: int
  */
+
 int _printf(const char *format, ...)
 {
-int charcount;
-char *str;
+ops_t print[] = {
+{"c", print_char},
+{"s", print_str},
+{"i", print_int},
+{"d", print_int},
+{NULL, NULL}
+};
+int charcount, i;
 va_list ptr;
 va_start(ptr, format);
 charcount = 0;
@@ -21,22 +97,17 @@ charcount++;
 else
 {
 format++;
-if (!format)
+i = 0;
+while (print[i].sp && *format)
+{
+if (*format == print[i].sp[0])
+{
+print[i].f(ptr, &charcount);
 break;
-if (*format == 'c')
-{
-putchar(va_arg(ptr, int));
-charcount++;
 }
-else if (*format == 's')
-{
-str = va_arg(ptr, char*);
-while (*str)
-{
-putchar(*str);
-charcount++;
-str++; }}
-else if (*format == '%')
+i++;
+}
+if (*format == '%' && !print[i].sp)
 {
 putchar('%');
 charcount++; }}
