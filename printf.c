@@ -35,6 +35,7 @@ str++;
  */
 void print_int(va_list ptr, int *charcountp)
 {
+int divisor, i;
 int num = va_arg(ptr, int);
 int num_copy = num;
 int num_digits = 0;
@@ -51,8 +52,8 @@ putchar('-');
 num = -num;
 }
 
-int divisor = 1;
-for (int i = 1; i < num_digits; i++)
+divisor = 1;
+for (i = 1; i < num_digits; i++)
 {
 divisor *= 10;
 }
