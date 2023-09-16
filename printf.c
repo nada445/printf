@@ -74,7 +74,7 @@ else if (!print[i].sp)
 {
 _putchar('%');
 _putchar(*format);
-charcount += 1; }}
+charcount += 2; }}
 format++; }
 va_end(ptr);
 return (charcount); }
