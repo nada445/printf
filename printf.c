@@ -72,10 +72,13 @@ _putchar('%');
 charcount++; }
 else if (!print[i].sp)
 {
+if(*format == ' ')
+_putchar("h");
+else
+{
 _putchar('%');
-
 _putchar(*format);
-charcount += 1; }}
+charcount += 2; }}}
 format++; }
 va_end(ptr);
 return (charcount); }
