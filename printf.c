@@ -43,7 +43,7 @@ ops_t print[] = {
 int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
-while (format && *format)
+while (*format)
 {
 if (*format != '%')
 {
@@ -55,7 +55,7 @@ format++;
 if (*format == '\0')
 break;
 i = 0;
-while (print[i].sp && *format)
+while (print[i].sp)
 {
 if (*format == print[i].sp[0])
 {
