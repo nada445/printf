@@ -104,8 +104,7 @@ while (*format)
 if (*format != '%')
 {
 _putchar(*format);
-charcount++;
-}
+charcount++; }
 else
 {
 format++;
@@ -115,22 +114,17 @@ while (print[i].sp && *format)
 if (*format == print[i].sp[0])
 {
 print[i].f(ptr, &charcount);
-break;
-}
-i++;
-}
+break; }
+i++; }
 if (*format == '%' && !print[i].sp)
 {
 _putchar('%');
-charcount++;
-}
+charcount++; }
 else if (!print[i].sp)
 {
 _putchar('%');
 _putchar(*format);
 charcount++; }}
-format++;
-}
+format++; }
 va_end(ptr);
-return (charcount);
-}
+return (charcount); }
