@@ -20,6 +20,8 @@ _putchar(va_arg(ptr, int));
 void print_str(va_list ptr, int *charcountp)
 {
 char *str = va_arg(ptr, char *);
+if(!str)
+str = "(null)";
 while (*str)
 {
 _putchar(*str);
