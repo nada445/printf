@@ -24,9 +24,9 @@ int main (void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    len =_printf("Unknown:% nrg\n");
-    len2=printf("Unknown:% nrg\n");
-     printf("Len:[%d]\n", len);
+    len =_printf("nknown:%");
+    len2=printf("\nUnknown:%");
+     printf("\nLen:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     return (0);
 

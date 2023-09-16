@@ -70,10 +70,6 @@ _putchar('%');
 charcount++; }
 else if (!print[i].sp)
 {
-if (*format == ' ')
-{
-format += 2;
-continue; }
 _putchar('%');
 _putchar(*format);
 charcount += 2; }}
