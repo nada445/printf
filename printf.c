@@ -69,7 +69,7 @@ i++; }
 if (*format == '%')
 {
 _putchar('%');
-charcount += 2; }
+charcount++; }
 else if (!print[i].sp)
 {
 _putchar('%');
