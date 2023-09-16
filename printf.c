@@ -27,52 +27,6 @@ _putchar(*str);
 str++;
 }
 }
-/**
- * print_int - does something
- * @ptr: variable
- * @charcountp: variable
- * Return: void
- */
-void print_int(va_list ptr, int *charcountp)
-{
-int divisor, i;
-int num = va_arg(ptr, int);
-int num_copy = num;
-int num_digits = 0;
-
-do {
-num_copy /= 10;
-num_digits++;
-} while (num_copy != 0);
-
-if (num == 0)
-{
-	_putchar('0');
-	(*charcountp) += 1;
-}
-if (num < 0)
-{
-_putchar('-');
-*(charcountp) += 1;
-num = -num;
-}
-
-divisor = 1;
-for (i = 1; i < num_digits; i++)
-{
-divisor *= 10;
-}
-
-while (divisor > 0)
-{
-int digit = num / divisor;
-_putchar('0' + digit);
-*(charcountp) += 1;
-num %= divisor;
-divisor /= 10;
-}
-
-}
 
 /**
  * _printf - printf function
@@ -85,8 +39,6 @@ int _printf(const char *format, ...)
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
-{"i", print_int},
-{"d", print_int},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
