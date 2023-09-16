@@ -1,6 +1,17 @@
 #include "main.h"
 
 /**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * 
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+return (write(1, &c, 1));
+}
+/**
  * print_char - does something
  * @ptr: variable
  * @charcountp: variable
@@ -8,7 +19,7 @@
  */
 void print_char(va_list ptr, int *charcountp)
 {
-putchar(va_arg(ptr, int));
+_putchar(va_arg(ptr, int));
 (*charcountp) += 1;
 }
 /**
@@ -22,7 +33,7 @@ void print_str(va_list ptr, int *charcountp)
 char *str = va_arg(ptr, char *);
 while (*str)
 {
-putchar(*str);
+_putchar(*str);
 (*charcountp) += 1;
 str++;
 }
@@ -61,7 +72,7 @@ divisor *= 10;
 while (divisor > 0)
 {
 int digit = num / divisor;
-putchar('0' + digit);
+_putchar('0' + digit);
 *(charcountp) += 1;
 num %= divisor;
 divisor /= 10;
@@ -92,7 +103,7 @@ while (*format)
 {
 if (*format != '%')
 {
-putchar(*format);
+_putchar(*format);
 charcount++;
 }
 else
@@ -110,7 +121,7 @@ i++;
 }
 if (*format == '%' && !print[i].sp)
 {
-putchar('%');
+_putchar('%');
 charcount++; }}
 format++;
 }
