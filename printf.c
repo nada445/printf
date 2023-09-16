@@ -49,7 +49,6 @@ if (num == 0)
 {
 	_putchar('0');
 	(*charcountp) += 1;
-	return;
 }
 if (num < 0)
 {
