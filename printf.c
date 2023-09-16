@@ -46,7 +46,7 @@ int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
 if (!format)
-return (0);
+return (-1);
 while (*format)
 {
 if (*format != '%')
@@ -69,7 +69,7 @@ i++; }
 if (*format == '%')
 {
 _putchar('%');
-charcount++; }
+charcount += 2; }
 else if (!print[i].sp)
 {
 _putchar('%');
