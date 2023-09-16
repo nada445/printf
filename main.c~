@@ -1,0 +1,12 @@
+#include "main.h"
+
+
+int main(void) {
+int len = printf("\0");
+printf("%d\n", len);
+ len = _printf("\0");
+ printf("%d",len);
+
+
+    return 0;
+}

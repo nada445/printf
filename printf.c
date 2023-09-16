@@ -45,7 +45,7 @@ ops_t print[] = {
 int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
- if (!format)
+if (!format)
 return (-1);
 while (*format)
 {
@@ -74,7 +74,7 @@ else if (!print[i].sp)
 {
 _putchar('%');
 _putchar(*format);
-charcount += 2; }}
+charcount += 1; }}
 format++; }
 va_end(ptr);
 return (charcount); }
