@@ -46,7 +46,7 @@ int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
 if (!format)
-return (-1);
+return (0);
 while (*format)
 {
 if (*format != '%')
