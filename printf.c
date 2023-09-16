@@ -87,12 +87,11 @@ ops_t print[] = {
 {"s", print_str},
 {"i", print_int},
 {"d", print_int},
-{NULL, NULL}
-};
+{NULL, NULL}};
 int charcount, i;
 va_list ptr;
 va_start(ptr, format);
-charcount = 0;
+charcount = 0, i = 0;
 while (*format)
 {
 if (*format != '%')
@@ -102,7 +101,8 @@ charcount++; }
 else
 {
 format++;
-i = 0;
+if (*format == '\0')
+break;
 while (print[i].sp && *format)
 {
 if (*format == print[i].sp[0])
@@ -118,7 +118,7 @@ else if (!print[i].sp)
 {
 _putchar('%');
 _putchar(*format);
-charcount++; }}
+charcount += 2; }}
 format++; }
 va_end(ptr);
 return (charcount); }
