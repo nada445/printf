@@ -91,7 +91,7 @@ ops_t print[] = {
 int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
-while (*format)
+while (format && *format)
 {
 if (*format != '%')
 {
