@@ -45,7 +45,7 @@ ops_t print[] = {
 int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
-if (!format)
+if (!format || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 while (*format)
 {
@@ -70,8 +70,6 @@ if (*format == '%')
 {
 _putchar('%');
 charcount++; }
-else if (*format == 'c')
-_putchar('\0');
 else if (!print[i].sp)
 {
 _putchar('%');
