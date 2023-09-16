@@ -57,7 +57,7 @@ else
 {
 format++;
 if (*format == '\0')
-break;
+return (-1);
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
@@ -66,7 +66,7 @@ print[i].f(ptr, &charcount);
 break;
 }
 i++; }
-if (*format == '%' && !print[i].sp)
+if (*format == '%')
 {
 _putchar('%');
 charcount++; }
