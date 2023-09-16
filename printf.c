@@ -1,34 +1,4 @@
 #include "main.h"
-
-/**
- * print_char - does something
- * @ptr: variable
- * @charcountp: variable
- * Return: void
- */
-void print_char(va_list ptr, int *charcountp)
-{
-_putchar(va_arg(ptr, int));
-(*charcountp) += 1;
-}
-/**
- * print_str - does something
- * @ptr: variable
- * @charcountp: variable
- * Return: void
- */
-void print_str(va_list ptr, int *charcountp)
-{
-char *str = va_arg(ptr, char *);
-if (!str)
-str = "(null)";
-while (*str)
-{
-_putchar(*str);
-(*charcountp) += 1;
-str++;
-}
-}
 /**
  * _printf - printf function
  * @format: var
@@ -36,10 +6,7 @@ str++;
  */
 int _printf(const char *format, ...)
 {
-ops_t print[] = {
-{"c", print_char},
-{"s", print_str},
-{NULL, NULL}};
+char *str;
 int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
@@ -55,20 +22,26 @@ else
 {
 format++;
 if (*format == '\0')
-return (-1);
-while (print[i].sp)
+return (-1)
+if (*format == 'c')
 {
-if (*format == print[i].sp[0])
+_putchar(*format);
+charcount++; }
+if (*format == 's')
 {
-print[i].f(ptr, &charcount);
-break;
-}
-i++; }
+str = va_arg(ptr, char *);
+if (!str)
+str = "(null)";
+while (*str)
+{
+_putchar(*str);
+charcount++;
+str++; }}
 if (*format == '%')
 {
 _putchar('%');
 charcount++; }
-else if (!print[i].sp)
+else
 {
 _putchar('%');
 _putchar(*format);
