@@ -45,6 +45,12 @@ num_copy /= 10;
 num_digits++;
 } while (num_copy != 0);
 
+if (num == 0)
+{
+	_putchar('0');
+	(*charcountp) += 1;
+	return;
+}
 if (num < 0)
 {
 _putchar('-');
