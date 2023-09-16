@@ -3,7 +3,7 @@
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
- * 
+ *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -58,7 +58,7 @@ num_digits++;
 
 if (num < 0)
 {
-putchar('-');
+_putchar('-');
 *(charcountp) += 1;
 num = -num;
 }
@@ -122,6 +122,12 @@ i++;
 if (*format == '%' && !print[i].sp)
 {
 _putchar('%');
+charcount++;
+}
+else if (!print[i].sp)
+{
+_putchar('%');
+_putchar(*format);
 charcount++; }}
 format++;
 }
