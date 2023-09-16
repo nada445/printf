@@ -88,10 +88,9 @@ ops_t print[] = {
 {"i", print_int},
 {"d", print_int},
 {NULL, NULL}};
-int charcount, i;
+int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
-charcount = 0, i = 0;
 while (*format)
 {
 if (*format != '%')
@@ -103,6 +102,7 @@ else
 format++;
 if (*format == '\0')
 break;
+i = 0;
 while (print[i].sp && *format)
 {
 if (*format == print[i].sp[0])
