@@ -57,7 +57,7 @@ else
 {
 format++;
 if (*format == '\0')
-return (-1);
+break;
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
