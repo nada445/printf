@@ -29,13 +29,11 @@ _putchar(*str);
 str++;
 }
 }
-
 /**
  * _printf - printf function
  * @format: var
  * Return: int
  */
-
 int _printf(const char *format, ...)
 {
 ops_t print[] = {
@@ -74,7 +72,7 @@ else if (!print[i].sp)
 {
 if (*format == ' ')
 {
-format++;
+format += 2;
 continue; }
 _putchar('%');
 _putchar(*format);
