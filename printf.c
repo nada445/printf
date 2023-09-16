@@ -70,6 +70,8 @@ if (*format == '%')
 {
 _putchar('%');
 charcount++; }
+else if (*format == 'c')
+_putchar('\0');
 else if (!print[i].sp)
 {
 _putchar('%');
