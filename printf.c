@@ -73,8 +73,9 @@ charcount++; }
 else if (!print[i].sp)
 {
 _putchar('%');
+
 _putchar(*format);
-charcount += 2; }}
+charcount += 1; }}
 format++; }
 va_end(ptr);
 return (charcount); }
