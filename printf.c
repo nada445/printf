@@ -61,7 +61,10 @@ break;
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
+{
 print[i].f(ptr, &charcount);
+break;
+}
 i++; }
 if (*format == '%' && !print[i].sp)
 {
