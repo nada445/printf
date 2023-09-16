@@ -73,7 +73,9 @@ charcount++; }
 else if (!print[i].sp)
 {
 if (*format == ' ')
-return (-1);
+{
+format++;
+continue; }
 _putchar('%');
 _putchar(*format);
 charcount += 2; }}
