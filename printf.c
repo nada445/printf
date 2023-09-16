@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 char *str;
-int charcount = 0, i = 0;
+int charcount = 0;
 va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
@@ -22,7 +22,7 @@ else
 {
 format++;
 if (*format == '\0')
-return (-1)
+return (-1);
 if (*format == 'c')
 {
 _putchar(*format);
