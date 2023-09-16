@@ -20,7 +20,7 @@ _putchar(va_arg(ptr, int));
 void print_str(va_list ptr, int *charcountp)
 {
 char *str = va_arg(ptr, char *);
-if(!str)
+if (!str)
 str = "(null)";
 while (*str)
 {
@@ -45,6 +45,8 @@ ops_t print[] = {
 int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
+if (!format)
+exit(98);
 while (*format)
 {
 if (*format != '%')
