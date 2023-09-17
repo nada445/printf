@@ -28,6 +28,11 @@ str++;
 }
 }
 /**
+ * print-int - does something
+ * @ptr: variable
+ * @charcountp: variable
+ */
+/**
  * _printf - printf function
  * @format: var
  * Return: int
