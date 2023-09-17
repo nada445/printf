@@ -12,6 +12,9 @@ int num = va_arg(ptr, int);
 int num_copy = num;
 int num_digits = 0;
 int tmp = num;
+if (num > 1000000000)
+return;
+
 do {
 num_copy /= 10;
 num_digits++;
