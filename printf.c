@@ -32,6 +32,12 @@ str++;
  * @ptr: variable
  * @charcountp: variable
  */
+void print_int(va_list ptr, int *charcountp)
+{
+int divisor, i;
+int num = va_arg(ptr, int);
+int num_copy = num;
+int num_digits = 0;
 /**
  * _printf - printf function
  * @format: var
