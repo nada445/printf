@@ -28,7 +28,7 @@ charcount++; }
 else
 {
 format++;
-if (*format == '\0')
+if (*format == '\0' || *format == ' ')
 return (-1);
 while (print[i].sp)
 {
