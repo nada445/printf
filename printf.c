@@ -56,6 +56,12 @@ _putchar('-');
 num = -num;
 }
 
+divisor = 1;
+for (i = 1; i < num_digits; i++)
+{
+divisor *= 10;
+}
+
 
 /**
  * _printf - printf function
