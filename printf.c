@@ -38,7 +38,7 @@ ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
 {NULL, NULL}};
-int charcount = 0;
+int charcount = 0, int i;
 va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
