@@ -84,6 +84,8 @@ int _printf(const char *format, ...)
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
+{"i", print_int},
+{"d", print_int},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
@@ -109,10 +111,7 @@ if (*format == print[i].sp[0])
 print[i].f(ptr, &charcount);
 break; }
 i++; }
-if (*format == '%')
-{
-_putchar('%');
-charcount++; }
+(*format == '%') ? (_putchar('%'), charcount++) : 0;
 else if (!print[i].sp)
 {
 _putchar('%');
