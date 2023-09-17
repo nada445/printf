@@ -44,7 +44,7 @@ int num_digits = 0, negative = 0;
 if (num < 0)
 {
 _putchar('-');
-negative = 1
+negative = 1;
 (*charcountp) += 1;
 num = -num; }
 do {
