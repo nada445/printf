@@ -63,16 +63,6 @@ for (i = 1; i < num_digits; i++)
 {
 divisor *= 10;
 }
-
-while (divisor > 0)
-{
-int digit = num / divisor;
-_putchar('0' + digit);
-*(charcountp) += 1;
-num %= divisor;
-divisor /= 10;
-}
-}
 /**
  * _printf - printf function
  * @format: var
