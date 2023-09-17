@@ -20,6 +20,8 @@ _putchar(va_arg(ptr, int));
 void print_str(va_list ptr, int *charcountp)
 {
 char *str = va_arg(ptr, char *);
+if (!str)
+str = "(null)";
 while (*str)
 {
 _putchar(*str);
@@ -27,22 +29,22 @@ _putchar(*str);
 str++;
 }
 }
-
 /**
  * _printf - printf function
  * @format: var
  * Return: int
  */
-
 int _printf(const char *format, ...)
 {
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
 {NULL, NULL}};
-int charcount = 0, i;
+int charcount = 0, i = 0;
 va_list ptr;
 va_start(ptr, format);
+if (!format || (format[0] == '%' && format[1] == '\0'))
+return (-1);
 while (*format)
 {
 if (*format != '%')
@@ -53,16 +55,16 @@ else
 {
 format++;
 if (*format == '\0')
-break;
-i = 0;
+return (-1);
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
 {
 print[i].f(ptr, &charcount);
-break; }
+break;
+}
 i++; }
-if (*format == '%' && !print[i].sp)
+if (*format == '%')
 {
 _putchar('%');
 charcount++; }
