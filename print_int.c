@@ -11,7 +11,7 @@ int divisor, i;
 int num = va_arg(ptr, int);
 int num_copy = num;
 int num_digits = 0;
-
+int tmp = num;
 do {
 num_copy /= 10;
 num_digits++;
@@ -21,7 +21,7 @@ if (num < 0)
 {
 _putchar('-');
 (*charcountp) += 1;
-num *= -1;
+tmp *= -1;
 }
 if (num == 0)
 {
@@ -38,10 +38,10 @@ divisor *= 10;
 
 while (divisor > 0)
 {
-int digit = num / divisor;
+int digit = tmp / divisor;
 _putchar(digit + '0');
 (*charcountp) += 1;
-num %= divisor;
+tmp %= divisor;
 divisor /= 10;
 }
 }
