@@ -111,15 +111,9 @@ if (*format == print[i].sp[0])
 print[i].f(ptr, &charcount);
 break; }
 i++; }
-if (*format == '%')
-{
-_putchar('%');
-charcount++; }
-else if (!print[i].sp)
-{
-_putchar('%');
-_putchar(*format);
-charcount += 2; }}
+*format == '%' ? (_putchar('%'), charcount++)
+: !print[i].sp ? (_putchar('%'), _putchar(*format), charcount += 2)
+: 0; }
 format++; }
 va_end(ptr);
 return (charcount); }
