@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
+{"i", print_int},
+{"d", print_int},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
