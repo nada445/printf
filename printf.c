@@ -50,12 +50,13 @@ if (num < 0)
 {
 _putchar('-');
 (*charcountp) += 1;
-num = -num;
+num *= -1;
 }
 if (num == 0)
 {
 _putchar('0');
 (*charcountp) += 1;
+return;
 }
 
 divisor = 1;
@@ -66,8 +67,8 @@ divisor *= 10;
 
 while (divisor > 0)
 {
-int digit = num / divisor + '0';
-_putchar(digit);
+int digit = num / divisor;
+_putchar(digit + '0');
 (*charcountp) += 1;
 num %= divisor;
 divisor /= 10;
