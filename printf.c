@@ -40,6 +40,7 @@ print[i].f(ptr, &charcount);
 break; }
 i++; }
 if (!print[i].sp && *format != ' ')
+{
 _putchar('%');
 _putchar(*format);
 charcount += 2; }}
