@@ -38,6 +38,25 @@ int divisor, i;
 int num = va_arg(ptr, int);
 int num_copy = num;
 int num_digits = 0;
+
+do {
+num_copy /= 10;
+num_digits++;
+} while (num_copy != 0);
+
+if (num == 0)
+{
+        _putchar('0');
+        (*charcountp) += 1;
+}
+if (num < 0)
+{
+_putchar('-');
+*(charcountp) += 1;
+num = -num;
+}
+
+
 /**
  * _printf - printf function
  * @format: var
