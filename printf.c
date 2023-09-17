@@ -4,7 +4,6 @@
  * print_char - does something
  * @ptr: variable
  * @charcountp: variable
- * Return: void
  */
 void print_char(va_list ptr, int *charcountp)
 {
