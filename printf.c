@@ -39,6 +39,8 @@ int num = va_arg(ptr, int);
 int num_copy = num;
 int num_digits = 0;
 
+if(ptr == NULL)
+return;
 do {
 num_copy /= 10;
 num_digits++;
