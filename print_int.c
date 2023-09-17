@@ -11,8 +11,7 @@ int divisor, i;
 int num = va_arg(ptr, int);
 int num_digits = 0;
 int num_copy = num;
-if (num < 0)
-return;
+
 do {
 num_copy /= 10;
 num_digits++;
