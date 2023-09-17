@@ -45,7 +45,7 @@ if (num < 0)
 {
 _putchar('-');
 negative = 1
-* (charcountp) += 1;
+(*charcountp) += 1;
 num = -num; }
 do {
 num_copy /= 10;
@@ -60,7 +60,7 @@ while (divisor > 0)
 {
 int digit = num / divisor;
 _putchar('0' + digit);
-*(charcountp) += 1;
+(*charcountp) += 1;
 num %= divisor;
 divisor /= 10;
 }
