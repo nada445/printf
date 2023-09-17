@@ -60,7 +60,7 @@ while (print[i].sp)
 if (*format == print[i].sp[0])
 {
 print[i].f(ptr, &charcount);
-break;}
+break; }
 i++; }
 if (*format == '%')
 {
