@@ -7,6 +7,8 @@
  */
 void print_int(va_list ptr, int *charcountp)
 {
+if (ptr == NULL)
+return;
 int divisor, i;
 int num = va_arg(ptr, int);
 int num_digits = 0;
