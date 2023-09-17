@@ -106,12 +106,12 @@ if (*format == '\0')
 return (-1);
 while (print[i].sp)
 {
-if (*format == print[i].sp[0])
-{
-print[i].f(ptr, &charcount);
-break; }
+(*format == print[i].sp[0]) ? (print[i].f(ptr, &charcount), break) : 0;
 i++; }
-(*format == '%') ? (_putchar('%'), charcount++) : 0;
+if (*format == '%')
+{
+_putchar('%');
+charcount++; }
 else if (!print[i].sp)
 {
 _putchar('%');
