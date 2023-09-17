@@ -39,7 +39,7 @@ void print_int(va_list ptr, int *charcountp)
 int divisor, i;
 int num = va_arg(ptr, int);
 int num_copy = num;
-int num_digits = 0, neg = 0;
+int num_digits = 0;
 
 do {
 num_copy /= 10;
@@ -49,11 +49,10 @@ num_digits++;
 if (num < 0)
 {
 _putchar('-');
-*(charcountp) += 1;
+(*charcountp) += 1;
 num = -num;
-neg = 1;
 }
-if (num == 0 && neg == 0)
+if (num == 0)
 {
 _putchar('0');
 (*charcountp) += 1;
@@ -67,9 +66,9 @@ divisor *= 10;
 
 while (divisor > 0)
 {
-int digit = num / divisor;
-_putchar('0' + digit);
-*(charcountp) += 1;
+int digit = num / divisor + '0';
+_putchar(digit);
+(*charcountp) += 1;
 num %= divisor;
 divisor /= 10;
 }
