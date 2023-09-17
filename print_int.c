@@ -7,38 +7,40 @@
  */
 void print_int(va_list ptr, int *charcountp)
 {
-int divisor = 1;
+int divisor, i;
 int num = va_arg(ptr, int);
-int num_copy, num_digits, i, digit;
+int num_digits = 0;
+int num_copy = num;
 
-if (ptr == NULL)
-return;
+do {
+num_copy /= 10;
+num_digits++;
+} while (num_copy != 0);
+
 if (num < 0)
 {
 _putchar('-');
 (*charcountp) += 1;
-num = -num; }
+num *= -1;
+}
 if (num == 0)
 {
 _putchar('0');
-(*charcountp) += 1; }
-else
-{
-num_copy = num;
-num_digits = 0;
-
-while (num_copy != 0)
-{
-num_copy /= 10;
-num_digits++; }
+(*charcountp) += 1;
+return;
+}
+divisor = 1;
 for (i = 1; i < num_digits; i++)
 {
-divisor *= 10; }
+divisor *= 10;
+}
+
 while (divisor > 0)
 {
-digit = num / divisor;
-_putchar('0' + digit);
+int digit = num / divisor;
+_putchar(digit + '0');
 (*charcountp) += 1;
 num %= divisor;
-divisor /= 10; }}
+divisor /= 10;
+}
 }
