@@ -17,7 +17,7 @@ int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
-return (-1);
+return (0);
 while (*format)
 {
 i = 0;
@@ -29,7 +29,7 @@ else
 {
 format++;
 if (*format == '\0' || *format == ' ')
-return (-1);
+return (0);
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
