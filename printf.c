@@ -106,7 +106,10 @@ if (*format == '\0')
 return (-1);
 while (print[i].sp)
 {
-(*format == print[i].sp[0]) ? (print[i].f(ptr, &charcount), break) : 0;
+if (*format == print[i].sp[0])
+{
+print[i].f(ptr, &charcount);
+break; }
 i++; }
 if (*format == '%')
 {
