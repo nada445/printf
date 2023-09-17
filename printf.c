@@ -40,6 +40,22 @@ int num_copy, num_digits, i, digit;
 
 if (ptr == NULL)
 return;
+if (num < 0)
+{
+_putchar('-');
+(*charcountp) += 1;
+num = -num; }
+if (num == 0)
+{
+_putchar('0');
+(*charcountp) += 1;
+}
+else
+{
+num_copy = num;
+num_digits = 0;
+
+
 }
 /**
  * _printf - printf function
