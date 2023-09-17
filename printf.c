@@ -18,13 +18,6 @@ va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
 return (-1);
-if (format[0] == '%' && format[1] == ' ')
-{
-i = 1;
-while (format[i] == ' ')
-i++;
-if (format[i] == '\0')
-return (-1); }
 while (*format)
 {
 i = 0;
@@ -46,8 +39,8 @@ if (*format == print[i].sp[0])
 print[i].f(ptr, &charcount);
 break; }
 i++; }
-!print[i].sp ? (_putchar('%'), _putchar(*format), charcount += 2)
-: 0; }
+if (!print[i].sp && *format != ' ')
+_putchar(*format); }
 format++; }
 va_end(ptr);
 return (charcount); }
