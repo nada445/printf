@@ -91,7 +91,9 @@ int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
-return (-1);
+{
+_putchar('\0');
+return (-1); }
 while (*format)
 {
 i = 0;
@@ -103,7 +105,7 @@ else
 {
 format++;
 if (*format == '\0')
-break;
+return (-1);
 while (print[i].sp)
 {
 if (*format == print[i].sp[0])
