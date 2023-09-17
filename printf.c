@@ -91,7 +91,7 @@ int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
 if (!format || (format[0] == '%' && format[1] == '\0'))
-return (0);
+return (-1);
 while (*format)
 {
 i = 0;
