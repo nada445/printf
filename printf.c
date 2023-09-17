@@ -15,7 +15,6 @@ _putchar(va_arg(ptr, int));
  * print_str - does something
  * @ptr: variable
  * @charcountp: variable
- * Return: void
  */
 void print_str(va_list ptr, int *charcountp)
 {
