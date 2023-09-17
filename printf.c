@@ -48,8 +48,8 @@ num_digits++;
 
 if (num == 0)
 {
-        _putchar('0');
-        (*charcountp) += 1;
+_putchar('0');
+(*charcountp) += 1;
 }
 if (num < 0)
 {
