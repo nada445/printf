@@ -48,8 +48,7 @@ num = -num; }
 if (num == 0)
 {
 _putchar('0');
-(*charcountp) += 1;
-}
+(*charcountp) += 1; }
 else
 {
 num_copy = num;
@@ -58,12 +57,10 @@ num_digits = 0;
 while (num_copy != 0)
 {
 num_copy /= 10;
-num_digits++;
-}
+num_digits++; }
 for (i = 1; i < num_digits; i++)
 {
-divisor *= 10;
-}
+divisor *= 10; }
 while (divisor > 0)
 {
 digit = num / divisor;
@@ -82,8 +79,6 @@ int _printf(const char *format, ...)
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
-{"i", print_int},
-{"d", print_int},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
