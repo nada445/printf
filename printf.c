@@ -55,7 +55,20 @@ else
 num_copy = num;
 num_digits = 0;
 
-
+while (num_copy != 0)
+{
+num_copy /= 10;
+num_digits++;
+}
+for (i = 1; i < num_digits; i++)
+{
+divisor *= 10;
+}
+while (divisor > 0)
+{
+digit = num / divisor;
+_putchar('0' + digit);
+(*charcountp) += 1;
 }
 /**
  * _printf - printf function
