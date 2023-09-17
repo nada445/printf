@@ -70,7 +70,7 @@ _putchar('0' + digit);
 num %= divisor;
 divisor /= 10;
 }
-
+}
 /**
  * _printf - printf function
  * @format: var
