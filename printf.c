@@ -34,6 +34,12 @@ str++;
  */
 void print_int(va_list ptr, int *charcountp)
 {
+int divisor = 1;
+int num = va_arg(ptr, int);
+int num_copy, num_digits, i, digit;
+
+if (ptr == NULL)
+return;
 }
 /**
  * _printf - printf function
