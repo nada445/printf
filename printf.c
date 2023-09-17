@@ -71,6 +71,7 @@ _putchar('0' + digit);
 (*charcountp) += 1;
 num %= divisor;
 divisor /= 10; }}}
+
 /**
  * _printf - printf function
  * @format: var
