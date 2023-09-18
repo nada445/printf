@@ -7,15 +7,24 @@
  */
 void print_int(va_list ptr, int *charcountp)
 {
-int divisor, i;
+int divisor, i, cp;
 int num = va_arg(ptr, int);
 unsigned int tmp = num;
 int num_digits = 0;
-int num_copy = num;
+unsigned int num_copy = num;
+cp = num;
+if (num > 0)
+{
 do {
 num_copy /= 10;
 num_digits++;
-} while (num_copy != 0);
+} while (num_copy != 0); }
+else
+{
+do {
+cp /= 10;
+num_digits++;
+} while (cp != 0); }
 if (num < 0)
 {
 _putchar('-');
