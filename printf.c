@@ -11,7 +11,7 @@ ops_t print[] = {
 {"s", print_str},
 {"i", print_int},
 {"d", print_int},
-{"%", print_percent},
+{"%", print_percent}, {"b", print_binary},
 {"r", print_reversed}, {"R", print_rot13},
 {NULL, NULL}};
 int charcount = 0, i;
