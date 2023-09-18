@@ -12,6 +12,7 @@ ops_t print[] = {
 {"i", print_int},
 {"d", print_int},
 {"%", print_percent},
+{"r", print_reversed},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
