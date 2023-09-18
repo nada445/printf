@@ -13,12 +13,12 @@ ops_t print[] = {
 {"d", print_int},
 {"%", print_percent},
 {"r", print_reversed},
+{"R", print_rot13},
 {NULL, NULL}};
 int charcount = 0, i;
 va_list ptr;
 va_start(ptr, format);
-if (!format || (format[0] == '%' && format[1] == '\0'))
-return (-1);
+return ((!format || (format[0] == '%' && format[1] == '\0')) ? -1 : 0);
 while (*format)
 {
 i = 0;
