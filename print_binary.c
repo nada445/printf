@@ -23,8 +23,7 @@ num /= 2;
 }
 for (j = i - 1; j >= 0; j--)
 {
-_putchar('0' + binary[j])
+_putchar(binary[j] + '0');
 (*charcountp) += 1;
 }
-
 }
