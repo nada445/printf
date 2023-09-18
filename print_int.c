@@ -3,7 +3,6 @@
  * print_int - does something
  * @ptr: variable
  * @charcountp: variable
- * Return: void
  */
 void print_int(va_list ptr, int *charcountp)
 {
