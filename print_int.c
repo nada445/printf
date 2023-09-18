@@ -40,6 +40,5 @@ int digit = num / divisor;
 _putchar(digit + '0');
 (*charcountp) += 1;
 num %= divisor;
-divisor /= 10;
-}
+divisor /= 10; }
 }
