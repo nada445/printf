@@ -7,17 +7,19 @@
  */
 void print_rot13(va_list ptr, int *charcountp)
 {
+int i;
+char c, base;
 char *s = va_arg(ptr, char *);
 if (!s)
 {
 s = "(null)";
 }
-for (int i = 0; s[i] != '\0'; i++)
+for (i = 0; s[i] != '\0'; i++)
 {
-char c = s[i];
+c = s[i];
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 {
-char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
+base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
 _putchar(((c - base + 13) % 26) + base);
 }
 else
