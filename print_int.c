@@ -20,8 +20,7 @@ if (num < 0)
 {
 _putchar('-');
 (*charcountp) += 1;
-num *= -1;
-}
+num *= -1; }
 if (num == 0)
 {
 _putchar('0');
