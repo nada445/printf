@@ -1,0 +1,14 @@
+#include "main.h"
+#include <stdio.h>
+
+int main (void)
+{
+   char *len = "%s";
+    int i,j;
+     
+   i= _printf("Length:[%s] \' \n", len);
+   j= printf("Length:[%s] \' \n", len);
+    _printf("i:[%d, %i]\n", i, i);
+    printf("j:[%d, %i]\n", j, j);
+  return (0);
+}
