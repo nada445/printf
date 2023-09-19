@@ -14,6 +14,8 @@ void print_reversed(va_list ptr, int *charcountp);
 void print_rot13(va_list ptr, int *charcountp);
 void print_binary(va_list ptr, int *charcountp);
 void print_pointer(va_list ptr, int *charcountp);
+void print_hexa(int n);
+void print_hexstr(va_list ptr, int *charcountp);
 /**
  * struct ops - struct
  * @sp: char

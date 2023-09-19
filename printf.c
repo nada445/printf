@@ -9,8 +9,8 @@ int _printf(const char *format, ...)
 ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
-{"i", print_int},
-{"d", print_int}, {"p", print_pointer},
+{"i", print_int}, {"p", print_pointer},
+{"d", print_int}, {"S", print_hexstr},
 {"%", print_percent}, {"b", print_binary},
 {"r", print_reversed}, {"R", print_rot13},
 {NULL, NULL}};
