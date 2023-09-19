@@ -10,7 +10,7 @@ ops_t print[] = {
 {"c", print_char},
 {"s", print_str},
 {"i", print_int},
-{"d", print_int},
+{"d", print_int}, {"S", print_hexstr},
 {"%", print_percent}, {"b", print_binary},
 {"r", print_reversed}, {"R", print_rot13},
 {NULL, NULL}};
