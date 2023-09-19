@@ -26,7 +26,7 @@ num /= 16;
 }
 for (j = 1; j >= 0; j--)
 {
-if (hexa[j] >= 0 && hexa[j] <= 9) 
+if (hexa[j] >= 0 && hexa[j] <= 9)
 _putchar(hexa[j] + '0');
 else
 _putchar(hexa[j]);
